@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>
-<%=title %>
-</title>
+	<title>
+		<%=title %>
+	</title>
 </head>
 <body>
-<% for(var i in messages) { %>
-<div class="flash"><%= messages[i] %></div>
-<% } %>
-<form action="/signup" method="post">
-<div>
-<label>Nome:</label>
-<input type="text" name="firstName" />
-</div>
-<div>
-<label>Sobrenome:</label>
-<input type="text" name="lastName" />
-</div>
-<div>
-<label>Email:</label>
-<input type="text" name="email" />
-</div>
-<div>
-<label>Nome de usuário:</label>
-<input type="text" name="username" />
-</div>
-<div>
-<label>Senha:</label>
-<input type="password" name="password" />
-</div>
-<div>
-<input type="submit" value="Inscreva-se" />
-</div>
-</form>
+	<% for(var i in messages) { %>
+		<div class="flash"><%= messages[i] %></div>
+	<% } %>
+	<form action="/signup" method="post">
+		<div>
+			<label>Nome:</label>
+			<input type="text" name="firstName" />
+		</div>
+		<div>
+			<label>Sobrenome:</label>
+			<input type="text" name="lastName" />
+		</div>
+		<div>
+			<label>Email:</label>
+			<input type="text" name="email" />
+		</div>
+		<div>
+			<label>Nome de usuário:</label>
+			<input type="text" name="username" />
+		</div>
+		<div>
+			<label>Senha:</label>
+			<input type="password" name="password" />
+		</div>
+		<div>
+			<input type="submit" value="Inscreva-se" />
+		</div>
+	</form>
 </body>
 </html>

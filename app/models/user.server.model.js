@@ -8,21 +8,16 @@ const UserSchema = new Schema({
 	lastName: String,
 	email: {
 		type: String,
-		
 		match: [/.+\@.+\..+/, "Preencha um email válido."]
 	},
 	username: {
 		type: String,
-		
 		unique: true,
-		
 		required: 'Nome de usuário é obrigatório.',
-		
 		trim: true
 	},
 	password: {
 		type: String,
-		
 		validate: [
 			(password) => password && password.length > 6,
 			'Senha deve ter 6 caracteres ou mais.'
@@ -33,14 +28,12 @@ const UserSchema = new Schema({
 	},
 	provider: {
 		type: String,
-		
-		required: 'Provider is required'
+		required: 'Provedor é requerido'
 	},
 	providerId: String,
 	providerData: {},
 	created: {
 		type: Date,
-		
 		default: Date.now
 	}
 });
@@ -60,7 +53,6 @@ UserSchema.pre('save', function(next) {
 		this.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
 		this.password = this.hashPassword(this.password);
 	}
-
 	next();
 });
 
@@ -79,13 +71,10 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 	
 	const possibleUsername = username + (suffix || '');
 
-	
 	this.findOne({
 		username: possibleUsername
 	}, (err, user) => {
-
 		if (!err) {
-			
 			if (!user) {
 				callback(possibleUsername);
 			} else {
@@ -105,3 +94,6 @@ UserSchema.set('toJSON', {
 
 
 mongoose.model('User', UserSchema);
+
+
+
