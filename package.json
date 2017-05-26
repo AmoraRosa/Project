@@ -24,6 +24,7 @@
   "homepage": "https://github.com/AmoraRosa/Project#readme",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
     "body-parser": "^1.17.2",
     "compression": "^1.6.2",
     "connect-flash": "^0.1.1",
